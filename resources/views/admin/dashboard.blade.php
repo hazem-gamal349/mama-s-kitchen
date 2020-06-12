@@ -17,7 +17,7 @@
                         </div>
                         <div class="card-content">
                             <p class="category">Category / Item</p>
-                            {{-- <h3 class="title">{{ $categoryCount }}/{{ $itemCount }} --}}
+                            <h3 class="title">{{ $categoryCount }}/{{ $itemCount }}
                             </h3>
                         </div>
                         <div class="card-footer">
@@ -35,7 +35,7 @@
                         </div>
                         <div class="card-content">
                             <p class="category">Slider Count</p>
-                            {{-- <h3 class="title">{{ $sliderCount }}</h3> --}}
+                            <h3 class="title">{{ $sliderCount }}</h3>
                         </div>
                         <div class="card-footer">
                             <div class="stats">
@@ -51,7 +51,7 @@
                         </div>
                         <div class="card-content">
                             <p class="category">Reservation</p>
-                            {{-- <h3 class="title">{{ $reservations->count() }}</h3> --}}
+                            <h3 class="title">{{ $reservations->count() }}</h3>
                         </div>
                         <div class="card-footer">
                             <div class="stats">
@@ -67,7 +67,7 @@
                         </div>
                         <div class="card-content">
                             <p class="category">Contact</p>
-                            {{-- <h3 class="title">{{ $contactCount }}</h3> --}}
+                            <h3 class="title">{{ $contactCount }}</h3>
                         </div>
                         <div class="card-footer">
                             <div class="stats">
@@ -94,7 +94,7 @@
                                 <th>Action</th>
                                 </thead>
                                 <tbody>
-                                {{-- @foreach($reservations as $key=>$reservation)
+                                @foreach($reservations as $key=>$reservation)
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
                                         <td>{{ $reservation->name }}</td>
@@ -131,7 +131,7 @@
                                                     }"><i class="material-icons">delete</i></button>
                                         </td>
                                     </tr>
-                                @endforeach --}}
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

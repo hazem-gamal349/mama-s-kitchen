@@ -23,18 +23,18 @@
                                     <div class="col-md-12">
                                         <div class="form-group label-floating">
                                             <label class="control-label">Category</label>
-                                            <select class="form-control" name="category" >
-                                                @foreach($categories as $key => $category)
-                                                <option value="{{$category->id }}">{{ $category->name}}</option>
+                                            <select class="form-control" name="category">
+                                                @foreach($categories as $category)
+                                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                     </div>
-                                   </div>
-                                   <div class="row">
+                                </div>
+                                <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group label-floating">
-                                            <label class="control-label" >Name</label>
+                                            <label class="control-label">Name</label>
                                             <input type="text" class="form-control" name="name">
                                         </div>
                                     </div>
@@ -43,9 +43,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group label-floating">
                                             <label class="control-label">Description</label>
-                                            <textarea class="form-control" name="description" >
-
-                                            </textarea>
+                                            <textarea class="form-control" name="description"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -60,10 +58,9 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                             <label class="control-label">Image</label>
-                                            <input type="file"  name="image">
-                                        </div>
-                                    </div>  
-
+                                            <input type="file" name="image">
+                                    </div>
+                                </div>
                                 <a href="{{ route('item.index') }}" class="btn btn-danger">Back</a>
                                 <button type="submit" class="btn btn-primary">Save</button>
                             </form>

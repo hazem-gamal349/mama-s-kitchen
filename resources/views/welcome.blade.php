@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="shortcut icon" href="images/star.png" type="favicon/ico" />
+    <!-- <link rel="shortcut icon" href="images/star.png" type="favicon/ico" /> -->
 
     <title>Mamma's Kitchen</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
@@ -20,7 +20,14 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap-datetimepicker.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <style>
-       
+        @foreach($sliders as $key=>$slider)
+        
+            .owl-carousel .owl-wrapper, .owl-carousel .owl-item:nth-child({{ $key + 1 }}) .item
+            {
+                background: url({{ asset('uploads/slider/'.$slider->image) }});
+                background-size: cover;
+            }
+        @endforeach
     </style>
 
     <script src="{{ asset('frontend/js/jquery-1.11.2.min.js') }}"></script>
@@ -70,7 +77,7 @@
 
 <!--== 5. Header ==-->
 <section id="header-slider" class="owl-carousel">
-    {{-- @foreach($sliders as $key=>$slider)
+    @foreach($sliders as $key=>$slider)
         <div class="item">
             <div class="container">
                 <div class="header-content">
@@ -79,7 +86,7 @@
                 </div> <!-- /.header-content -->
             </div>
         </div>
-    @endforeach --}}
+    @endforeach
 </section>
 
 
@@ -122,9 +129,9 @@
                                 <h2 class="pricing-title">Our Menu List In Affordable Pricing</h2>
                                 <ul id="filter-list" class="clearfix">
                                     <li class="filter" data-filter="all">All</li>
-                                    {{-- @foreach($categories as $category)
+                                    @foreach($categories as $category)
                                         <li class="filter" data-filter="#{{ $category->slug }}">{{ $category->name }} <span class="badge">{{ $category->items->count() }}</span></li>
-                                    @endforeach --}}
+                                    @endforeach
                                 </ul><!-- @end #filter-list -->
                             </div>
                         </div>
@@ -137,7 +144,7 @@
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <ul id="menu-pricing" class="menu-price">
-{{-- 
+
                         @foreach($items as $item)
                             <li class="item" id="{{ $item->category->slug }}">
                                 <a href="#">
@@ -151,7 +158,7 @@
                                 </a>
                                 <h2 class="white">${{ $item->price }}</h2>
                             </li>
-                        @endforeach --}}
+                        @endforeach
                     </ul>
 
                     <!-- <div class="text-center">

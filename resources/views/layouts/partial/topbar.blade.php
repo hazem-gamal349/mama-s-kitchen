@@ -13,19 +13,19 @@
             <ul class="nav navbar-nav navbar-right">
                  <li>
                     <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="material-icons">dashboard</i>
+                        {{-- <i class="material-icons">dashboard</i> --}}
                         <p class="hidden-lg hidden-md">Dashboard</p>
                     </a>
-                </li> 
+                </li>
                 <li>
                     <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="material-icons">person</i>
+                        {{-- <i class="material-icons">person</i> --}}
                         <p class="hidden-lg hidden-md">Profile</p>
                     </a>
                 </li> 
                 <li>
                     <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                        <i class="material-icons">exit_to_app</i>
+                        {{-- <i class="material-icons">exit_to_app</i> --}}
                         Logout
                     </a>
                     <form id="logout-form" method="POST" action="{{ route('logout') }}" style="display: none">

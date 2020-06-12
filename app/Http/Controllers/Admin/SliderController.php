@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Slider;
 use Carbon\Carbon;
-
-
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -18,7 +17,6 @@ class SliderController extends Controller
     public function index()
     {
         $sliders = Slider::all();
-        
         return view('admin.slider.index',compact('sliders'));
     }
 
@@ -30,7 +28,6 @@ class SliderController extends Controller
     public function create()
     {
         return view('admin.slider.create');
-
     }
 
     /**
@@ -138,12 +135,10 @@ class SliderController extends Controller
     public function destroy($id)
     {
         $slider = Slider::find($id);
-
         if (file_exists('uploads/slider/'.$slider->image))
         {
             unlink('uploads/slider/'.$slider->image);
         }
-
         $slider->delete();
         return redirect()->back()->with('successMsg','Slider Successfully Deleted');
     }

@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use App\Category;
 
+use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,7 +15,6 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        
         $categories = Category::all();
         return view('admin.category.index',compact('categories'));
     }
@@ -28,7 +27,6 @@ class CategoryController extends Controller
     public function create()
     {
         return view('admin.category.create');
-
     }
 
     /**
@@ -81,7 +79,6 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
         $this->validate($request,[
             'name'=>'required'
         ]);
@@ -101,7 +98,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        Category::find($id)->delete();
-        return redirect()->back()->with('successMsg','Category Successfully Delete');
+       Category::find($id)->delete();
+       return redirect()->back()->with('successMsg','Category Successfully Delete');
     }
 }

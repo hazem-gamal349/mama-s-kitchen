@@ -166,6 +166,7 @@ class ItemController extends Controller
     public function destroy($id)
     {
         $item = Item::find($id);
+        
         unlink('uploads/slider/'.$item->image);
 
         $item->delete();

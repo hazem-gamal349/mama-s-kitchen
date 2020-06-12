@@ -63,11 +63,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
+
             // Javascript method's body can be found in assets/js/demos.js
             demo.initDashboardPageCharts();
+
         });
     </script>
-    {{-- {!! Toastr::message() !!} --}}
+    {!! Toastr::message() !!}
     @stack('scripts')
 </body>
 </html>
